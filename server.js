@@ -1,8 +1,24 @@
+require('dotenv').config();
+require('./config/database');
 const express = require('express');
 const app = express();
+const userController = require('./controllers/userController');
+const session = require('express-session');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use('/users', userController);
+app.use(
+    session({
+      secret: process.env.SECRET,
+      resave: false, 
+      saveUninitialized: false
+    })
+)
+  
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.render('home.ejs');
 })
 
 app.listen(3000, () => {
