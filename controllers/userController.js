@@ -4,7 +4,7 @@ const User = require("../models/User")
 
 router.get('/new', (req, res) => {
   res.render('users/new.ejs', {  currentUser: req.session.currentUser
-  }) //we will make this in another step but good to get the route down
+  })
 })
 
 router.post('/', async (req, res) => {

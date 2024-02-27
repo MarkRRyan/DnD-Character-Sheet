@@ -1,12 +1,11 @@
 <header class="navbar bg-light opacity-75">
     <div class="container">
       <h1>DnD Character Builder</h1>
-      <a class="nav-link" href="/fruits">All Fruits</a>
       <% if (currentUser) { %>
-        <a class="nav-link" href="/fruits/new">Create a Fruit</a>
+        <a class="nav-link" href="/character/new">Character Creation</a>
         <li class="nav-link">Welcome <%= currentUser.username %></li>
         <li class="nav-link">
-          <form action="/sessions?_method=DELETE" method="POST">
+          <form action="/sessions?_method=DELETE" method="POST" style="display:contents;">
             <input type="submit" value="Log Out" />
           </form>
         </li>
