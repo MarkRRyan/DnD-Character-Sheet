@@ -3,7 +3,9 @@ const bcrypt = require("bcrypt")
 const User = require("../models/User")
 
 router.get('/new', (req, res) => {
-  res.render('users/new.ejs', {  currentUser: req.session.currentUser
+  res.render('users/new.ejs', {  
+    tabTitle: "Register",
+    currentUser: req.session.currentUser
   })
 })
 
